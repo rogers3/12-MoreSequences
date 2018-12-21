@@ -6,8 +6,8 @@ one item at a time, using the ACCUMULATOR pattern.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Christina Rogers.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -19,18 +19,18 @@ def main():
     run_test_make_less_simple_string()
 
     # -------------------------------------------------------------------------
-    # TODO: 8. Uncomment the tests below before working _TODO_ 9.
+    # DONE: 8. Uncomment the tests below before working _TODO_ 9.
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to _TODO_ 9 and _TODO_ 10.
     # -------------------------------------------------------------------------
-    # run_test_draw_shapes()
-    # run_test_rectangles_from_circles()
+    run_test_draw_shapes()
+    run_test_rectangles_from_circles()
 
 
 def run_test_make_simple_list():
     """ Tests the   make_simple_list    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  make_simple_list  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -47,7 +47,17 @@ def run_test_make_simple_list():
     print('Expected:', expected)
     print('Actual:  ', actual)
 
-    # Test 2 (add your test here):
+    # Test 2:
+    expected = [0, 1, 2, 3]
+    actual = make_simple_list(0, 3)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 3:
+    expected = [-1, 0, 1]
+    actual = make_simple_list(-1, 1)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_simple_list(m, n):
@@ -69,15 +79,18 @@ def make_simple_list(m, n):
       :type n: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
-
+    list = []
+    for i in range (m, n+1):
+        list = list + [i]
+    return (list)
 
 def run_test_make_simple_string():
     """ Tests the   make_simple_string    function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  make_simple_string  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -88,6 +101,17 @@ def run_test_make_simple_string():
     print('Testing the   make_simple_string   function:')
     print('--------------------------------------------------')
 
+    # Test 1:
+    expected = '5-6-7-8-9-10-11-12-13-'
+    actual = make_simple_string(5, 13)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 2:
+    expected = '205-'
+    actual = make_simple_string(205, 205)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 def make_simple_string(m, n):
     """
@@ -110,15 +134,19 @@ def make_simple_string(m, n):
       :type n: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
+    string = ''
+    for i in range(m, n+1):
+        string =string + str(i) + '-'
+    return (string)
 
 
 def run_test_make_less_simple_string():
     """ Tests the   make_less_simple_string    function. """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # DONE: 6. Implement this TEST function.
     #   It TESTS the  make_less_simple_string  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -128,6 +156,17 @@ def run_test_make_less_simple_string():
     print('--------------------------------------------------')
     print('Testing the   make_less_simple_string   function:')
     print('--------------------------------------------------')
+    # Test 1:
+    expected = '5-6-7-8-9-10-11-12-13'
+    actual = make_less_simple_string(5, 13)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 2:
+    expected = '205'
+    actual = make_less_simple_string(205, 205)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_less_simple_string(m, n):
@@ -153,9 +192,16 @@ def make_less_simple_string(m, n):
       :type n: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
+    string = ''
+    for i in range (m, n+1):
+        if(i<n):
+            string = string + str(i)+ '-'
+        else:
+            string = string + str(i)
+    return (string)
 
 
 def run_test_draw_shapes():
@@ -236,7 +282,7 @@ def draw_shapes(shapes, window):
       :type window:  rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # DONE: 9. Implement and test this function.
     #             *** Make sure you do _TODO_ 8 in main first! ***
     # The testing code is already written for you; you enabled it via _TODO_ 8.
     #
@@ -247,6 +293,9 @@ def draw_shapes(shapes, window):
     # FWIW: The word for ideas like this is "polymorphism".
     ###########################################################################
     # -------------------------------------------------------------------------
+    for i in shapes:
+        i.attach_to(window)
+        window.render(.3)
 
 
 def run_test_rectangles_from_circles():
