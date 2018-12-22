@@ -8,8 +8,8 @@ for ITERATING through SEQUENCES, including:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Christina Rogers.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -77,7 +77,7 @@ def sum_radii(circles):
       :rtype: int | float
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -88,6 +88,10 @@ def sum_radii(circles):
     #
     #       Instead, use explicit loops, as you have for other problems.
     # -------------------------------------------------------------------------
+    sum = 0
+    for i in circles:
+        sum = sum + i.radius
+    return (sum)
 
 
 ###############################################################################
@@ -155,6 +159,12 @@ def count_last_n_odds(integers, n):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    list = []
+    for num in integers:
+        for i in str(num):
+            if ((int(i))%2 == 1):
+                list = list + [int(i)]
+    return (list)
 
 
 ###############################################################################
