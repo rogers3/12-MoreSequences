@@ -160,9 +160,9 @@ def count_last_n_odds(integers, n):
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
     sum = 0
-    for i in range(len(integers)-1, len(integers)-1-n, -1):
-        if (integers[i]%2 == 1):
-            sum =sum +1
+    for i in range(len(integers) - 1, len(integers) - 1 - n, -1):
+        if (integers[i] % 2 == 1):
+            sum = sum + 1
     return (sum)
 
 
@@ -303,7 +303,7 @@ def contains_an_a(s):
       :rtype: bool
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ###########################################################################
@@ -316,6 +316,11 @@ def contains_an_a(s):
     #   Use an explicit loop, as you have done in the other problems.
     #   No fair using the   count   or   find   string methods.
     # -------------------------------------------------------------------------
+    a = False
+    for i in s:
+        if i == 'a':
+            a = True
+    return (a)
 
 
 # -----------------------------------------------------------------------------
