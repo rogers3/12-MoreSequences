@@ -83,9 +83,10 @@ def make_simple_list(m, n):
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     list = []
-    for i in range (m, n+1):
+    for i in range(m, n + 1):
         list = list + [i]
     return (list)
+
 
 def run_test_make_simple_string():
     """ Tests the   make_simple_string    function. """
@@ -113,6 +114,7 @@ def run_test_make_simple_string():
     print('Expected:', expected)
     print('Actual:  ', actual)
 
+
 def make_simple_string(m, n):
     """
     What comes in:
@@ -138,8 +140,8 @@ def make_simple_string(m, n):
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     string = ''
-    for i in range(m, n+1):
-        string =string + str(i) + '-'
+    for i in range(m, n + 1):
+        string = string + str(i) + '-'
     return (string)
 
 
@@ -196,9 +198,9 @@ def make_less_simple_string(m, n):
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     string = ''
-    for i in range (m, n+1):
-        if(i<n):
-            string = string + str(i)+ '-'
+    for i in range(m, n + 1):
+        if (i < n):
+            string = string + str(i) + '-'
         else:
             string = string + str(i)
     return (string)

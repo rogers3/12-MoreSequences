@@ -156,15 +156,14 @@ def count_last_n_odds(integers, n):
       :rtype: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-    list = []
-    for num in integers:
-        for i in str(num):
-            if ((int(i))%2 == 1):
-                list = list + [int(i)]
-    return (list)
+    sum = 0
+    for i in range(len(integers)-1, len(integers)-1-n, -1):
+        if (integers[i]%2 == 1):
+            sum =sum +1
+    return (sum)
 
 
 ###############################################################################
@@ -237,9 +236,18 @@ def index_of_first_negative(numbers):
       :rtype: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    list = []
+    # while(index == -1):
+    for i in range(len(numbers)):
+        if (numbers[i] < 0):
+            list = list + [i]
+    if len(list) > 0:
+        return (list[0])
+    else:
+        return (-1)
 
 
 def run_test_contains_an_a():
